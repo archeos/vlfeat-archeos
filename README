@@ -1,17 +1,5 @@
-VLFeat packaging
-================
-VLFeat packaging for archeos (www.archeos.eu) 
-
-Build Instructions
-------------------
-* install git-buildpackage
-* run 'git-buildpackage' in the master branch
-
-Original README
-===============
-
                    VLFeat (Vision Library Features)
-                            Version 0.9.16
+                            Version 0.9.15
 
 ABOUT
 
