@@ -1,9 +1,9 @@
 Source: vlfeat
-Standards-Version: 3.9.4.0
+Standards-Version: 3.9.4
 Maintainer: Romain Janvier <romain.janvier@hotmail.fr>
 Section: misc
 Priority: optional
-Build-Depends: debhelper (>= 8)
+Build-Depends: debhelper (>= 9)
 
 Package: libvlfeat
 Section: libs
