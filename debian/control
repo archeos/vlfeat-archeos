@@ -5,7 +5,7 @@ Section: misc
 Priority: optional
 Build-Depends: debhelper (>= 9)
 
-#Package: libvlfeat
+#Package: libvlfeat16
 #Section: libs
 #Architecture: any
 #Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -22,5 +22,10 @@ Build-Depends: debhelper (>= 9)
 Package: vlfeat
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A computer vision program
- sift, mser, aib.
+Description: Computer vision command-line tools
+ This package provides command-line tools built against
+ libvlfeat. Libvlfeat is an Open Source 
+ computer vision library specialized in features extraction
+ and matching. It includes a free SIFT implementation.
+ Library packages (libvlfeat package and -dev package)
+ will come soon.
