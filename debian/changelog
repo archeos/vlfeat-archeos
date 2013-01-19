@@ -5,4 +5,4 @@ vlfeat (0.9.16-0archeos1) unstable; urgency=low
   * Added a dummy soname to libvl (as it's only used by this package)
   * Arch-independent build directory
 
- -- Romain Janvier <romain@Archeos>  Sat, 19 Jan 2013 13:24:50 +0100
+ -- Romain Janvier <romain.janvier@hotmail.f>  Sat, 19 Jan 2013 13:24:50 +0100
