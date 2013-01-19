@@ -1,5 +1,8 @@
-vlfeat (0.9.16-0archeos1) UNRELEASED; urgency=low
+vlfeat (0.9.16-0archeos1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release
+  *  only command-line tools for now!
+  * Added a dummy soname to libvl (as it's only used by this package)
+  * Arch-independent build directory
 
- -- Romain Janvier <romain.janvier@hotmail.fr>  Thu, 10 Jan 2013 00:53:40 +0100
+ -- Romain Janvier <romain@Archeos>  Sat, 19 Jan 2013 13:24:50 +0100
