@@ -1,10 +1,16 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: VLFeat
 Source: https://github.com/vlfeat/vlfeat
 
 Files: *
 Copyright: 2007- 2010 Andrea Vedaldi Brian Fulkerson
 License: BSD
+PATENT: This demo software is provided for research purposes only. 
+ A license must be obtained from the University of British Columbia for any
+ commercial applications.
+ Method and apparatus for identifying scale invariant features in an
+ image and use of same for locating an object in an image
+ David G. Lowe, US Patent 6,711,293 (March 23, 2004). Provisional application
+ filed March 8, 1999. Asignee: The University of British Columbia.
 
 Files: debian/*
 Copyright: 2013 Romain Janvier <romain.janvier@hotmail.fr>
@@ -49,3 +55,5 @@ License: BSD
  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+
