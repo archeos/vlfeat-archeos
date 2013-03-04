@@ -1,7 +1,7 @@
 vlfeat (0.9.16-0archeos1) unstable; urgency=low
 
   * Initial release
-  *  only command-line tools for now!
+  * only command-line tools for now!
   * Added a dummy soname to libvl (as it's only used by this package)
   * Arch-independent build directory
 

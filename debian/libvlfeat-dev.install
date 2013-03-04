@@ -1,0 +1,2 @@
+bin/libvlfeat.so /usr/lib
+vl/* /usr/include/vl

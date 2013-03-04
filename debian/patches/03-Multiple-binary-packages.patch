@@ -1,0 +1,60 @@
+From: Romain Janvier <romain.janvier@hotmail.fr>
+Date: Mon, 4 Mar 2013 15:41:19 +0100
+Subject: Multiple binary packages
+
+---
+ make/dll.mak   |   10 ++++++----
+
+--- a/make/dll.mak
++++ b/make/dll.mak
+@@ -18,10 +18,10 @@ info: dll-info
+ #                                                        Configuration
+ # --------------------------------------------------------------------
+ 
+-DLL_NAME = vl
++DLL_NAME = vlfeat
+ 
+ DLL_CFLAGS  = $(STD_CFLAGS)
+-DLL_CFLAGS += -fvisibility=hidden -fPIC -DVL_BUILD_DLL -pthread -Wl,-soname,libvl.so
++DLL_CFLAGS += -fvisibility=hidden -fPIC -DVL_BUILD_DLL -pthread -Wl,-soname,libvlfeat.so.0
+ DLL_CFLAGS += $(call if-like,%_sse2,$*,-msse2)
+ 
+ DLL_LDFLAGS += -lm
+@@ -40,12 +40,12 @@ endif
+ 
+ # Linux-32
+ ifeq ($(ARCH),glnx86)
+-DLL_SUFFIX := so
++DLL_SUFFIX := so.0.9.16
+ endif
+ 
+ # Linux-64
+ ifeq ($(ARCH),glnxa64)
+-DLL_SUFFIX := so
++DLL_SUFFIX := so.0.9.16
+ endif
+ 
+ # --------------------------------------------------------------------
+@@ -100,8 +100,10 @@ $(BINDIR)/lib$(DLL_NAME).dylib : $(dll_o
+ 	            $(DLL_LDFLAGS)
+ 
+ 
+-$(BINDIR)/lib$(DLL_NAME).so : $(dll_obj)
++$(BINDIR)/lib$(DLL_NAME).so.0.9.16 : $(dll_obj)
+ 	$(call C,CC) $(DLL_CFLAGS) -shared $(^) -o $(@) $(DLL_LDFLAGS)
++	ln -s lib$(DLL_NAME).so.0.9.16 $(BINDIR)/libvlfeat.so
++	ln -s lib$(DLL_NAME).so.0.9.16 $(BINDIR)/libvlfeat.so.0
+ 
+ dll-clean:
+ 	rm -f $(dll_dep) $(dll_obj)
+--- a/make/bin.mak
++++ b/make/bin.mak
+@@ -19,7 +19,7 @@ info: bin-info
+ # --------------------------------------------------------------------
+ 
+ BIN_CFLAGS = $(STD_CFLAGS) -I$(VLDIR)
+-BIN_LDFLAGS = $(STD_LDFLAGS) -L$(BINDIR) -lvl
++BIN_LDFLAGS = $(STD_LDFLAGS) -L$(BINDIR) -lvlfeat
+ 
+ # Mac OS X Intel 32
+ ifeq ($(ARCH),maci)

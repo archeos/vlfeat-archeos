@@ -1,6 +1,15 @@
 #!/usr/bin/make -f
+include /usr/share/hardening-includes/hardening.make
+
+export CFLAGS=$(shell dpkg-buildflags --get CFLAGS)
+export LDFLAGS=$(shell dpkg-buildflags --get LDFLAGS)
+export CFLAGS+=$(HARDENING_CFLAGS)
+export LDFLAGS+=$(HARDENING_LDFLAGS)
+
+ 
+
 %:
 	dh $@
 
-override_dh_install:
-	dh_install --sourcedir=bin/ 
+override_dh_shlibdeps:
+	dh_shlibdeps -Lbin/ -lvlfeat

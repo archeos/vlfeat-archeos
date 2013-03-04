@@ -1,0 +1,23 @@
+--- a/Makefile.mak
++++ b/Makefile.mak
+@@ -144,6 +144,10 @@ LFLAGS = $(LFLAGS) /NOLOGO \
+          /INCREMENTAL:NO \
+          /MANIFEST
+ 
++CFLAGS += $(shell dpkg-buildflags --get CFLAGS)
++
++LFLAGS += $(shell dpkg-buildflags --get LDFLAGS)
++
+ !if "$(DEBUG)" != "no"
+ !message === DEBUGGING ON
+ CFLAGS = $(CFLAGS) /Z7 /D"DEBUG"
+--- a/make/dll.mak
++++ b/make/dll.mak
+@@ -25,6 +25,7 @@ DLL_CFLAGS += -fvisibility=hidden -fPIC
+ DLL_CFLAGS += $(call if-like,%_sse2,$*,-msse2)
+ 
+ DLL_LDFLAGS += -lm
++DLL_LDFLAGS += $(shell dpkg-buildflags --get LDFLAGS)
+ 
+ BINDIR = bin
+ 

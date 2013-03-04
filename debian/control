@@ -1,28 +1,38 @@
 Source: vlfeat
 Standards-Version: 3.9.4
 Maintainer: Romain Janvier <romain.janvier@hotmail.fr>
-Section: non-free/science
+Section: non-free/libs
 Priority: optional
 Build-Depends: debhelper (>= 9)
 
-#Package: libvlfeat16
-#Section: libs
-#Architecture: any
-#Depends: ${shlibs:Depends}, ${misc:Depends}
-#Description: A computer vision library
-# <insert long description, indented with spaces>
-
-#Package: libvlfeat-dev
-#Section: libdevel
-#Architecture: any
-#Depends: libvlfeat (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-#Description: A computer vision library
-# <insert long description, indented with spaces>
-
-Package: vlfeat
+Package: libvlfeat0
+Section: non-free/libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Computer vision command-line tools
+Description: Computer vision library
+ This package provides dynamic VLFeat library.
+ It includes a free SIFT implementation. But 
+ PLEASE NOTE that SIFT algorithm is patented and must not
+ be used for commercial purpose.
+
+Package: libvlfeat-dev
+Section: non-free/libdevel
+Architecture: any
+Depends: libvlfeat0 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Computer vision library
+ This package provides headers of the VLFeat library.
+ static library is not provided due to limitation
+ in vlfeat architecture (please refer to the following link
+ for further information https://github.com/vlfeat/vlfeat/pull/9).
+ It includes a free SIFT implementation. But 
+ PLEASE NOTE that SIFT algorithm is patented and must not
+ be used for commercial purpose.
+
+Package: libvlfeat-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+section: non-free/science
+Description: Computer vision library
  This package provides command-line tools built against
  libvlfeat. Libvlfeat is an Open Source 
  computer vision library specialized in features extraction

@@ -1,2 +1,4 @@
-0002-add-dummy-soname.patch
-0001-Add-destdir-to-makefile.patch
+01-Add-destdir-to-makefile.patch
+02-add-dummy-soname.patch
+03-Multiple-binary-packages.patch
+04-Hardening.patch

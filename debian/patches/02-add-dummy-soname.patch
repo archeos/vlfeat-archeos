@@ -1,3 +1,13 @@
+From: Romain Janvier <romain.janvier@hotmail.fr>
+Date: Mon, 4 Mar 2013 13:43:50 +0100
+Subject: add a dummy soname
+
+---
+ make/dll.mak |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/make/dll.mak b/make/dll.mak
+index 0068d2b..98f4998 100644
 --- a/make/dll.mak
 +++ b/make/dll.mak
 @@ -21,7 +21,7 @@ info: dll-info
