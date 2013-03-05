@@ -1,4 +1,4 @@
 01-Add-destdir-to-makefile.patch
-02-add-dummy-soname.patch
+02-Add-soname.patch
 03-Multiple-binary-packages.patch
 04-Hardening.patch

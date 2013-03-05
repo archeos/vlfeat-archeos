@@ -1,3 +1,14 @@
+From: Romain Janvier <romain.janvier@hotmail.fr>
+Date: Tue, 5 Mar 2013 15:00:00 +0100
+Subject: Hardening
+Abstract: 
+ this patch add hardening flags *inside* the Makefile
+ because vlfeat targets not only rely on CFLAGS variable 
+ (so automatic flag injection doesn't work). 
+ Despite of this patch lintian still complains about hardening
+ issues. It need deeper investigation but for now I consider 
+ these warnings are false positives. 
+
 --- a/Makefile.mak
 +++ b/Makefile.mak
 @@ -144,6 +144,10 @@ LFLAGS = $(LFLAGS) /NOLOGO \
@@ -21,3 +32,16 @@
  
  BINDIR = bin
  
+--- a/Makefile
++++ b/Makefile
+@@ -146,8 +146,11 @@ STD_CFLAGS += $(ifeq ($(DISABLE_THREADS)
+ STD_CFLAGS += $(ifeq ($(DISABLE_SSE2),yes),-DVL_DISABLE_SSE2)
+ STD_CFLAGS += $(if $(DEBUG), -DDEBUG -O0 -g, -DNDEBUG -O3)
+ STD_CFLAGS += $(if $(PROFILE), -g,)
++STD_CFLAGS += $(shell dpkg-buildflags --get CFLAGS)
+ 
+ STD_LDFLAGS = $(LDFLAGS)
++STD_LDFLAGS += $(shell dpkg-buildflags --get LDFLAGS)
++
+ 
+ # Architecture specific ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
