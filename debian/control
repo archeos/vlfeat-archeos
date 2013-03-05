@@ -10,7 +10,7 @@ Section: non-free/libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Computer vision library
- This package provides dynamic VLFeat library.
+ This package provides the dynamic VLFeat library.
  It includes a free SIFT implementation. But 
  PLEASE NOTE that SIFT algorithm is patented and must not
  be used for commercial purpose.
@@ -39,6 +39,3 @@ Description: Computer vision library
  and matching. It includes a free SIFT implementation. But 
  PLEASE NOTE that SIFT algorithm is patented and must not
  be used for commercial purpose.
- .
- Library packages (libvlfeat package and -dev package)
- will come soon.
