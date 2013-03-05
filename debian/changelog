@@ -1,4 +1,13 @@
-vlfeat (0.9.16-0archeos1) unstable; urgency=low
+vlfeat (0.9.16-0archeos2) theodoric; urgency=low
+
+  * Added better doc on patent issues
+  * Copyright changes
+  * Multiple binary packages
+  * Added upstream manpages
+
+ -- Romain Janvier <romain.janvier@hotmail.fr>  Tue, 05 Mar 2013 16:33:46 +0100
+
+vlfeat (0.9.16-0archeos1) theodoric; urgency=low
 
   * Initial release
   * only command-line tools for now!
